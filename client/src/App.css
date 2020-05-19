@@ -1,0 +1,13 @@
+@import '~antd/dist/antd.css';
+
+.App {
+  text-align: center;
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+}
+
+.App .content {
+  padding: 20px;
+  width: 100%;
+}
