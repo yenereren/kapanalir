@@ -1,12 +1,8 @@
-const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const {userFunction} = require('../middlewares/userFunction');
 
-module.exports = functions.https.onCall((data, context) => {  
+module.exports = userFunction((data, context) => {  
   return new Promise(async (resolve, reject) => {
-    if (!context.auth) {
-      reject(new functions.https.HttpsError('unauthenticated'));
-    }
-
     const game = {
       users: [],
       propertySets: [],
