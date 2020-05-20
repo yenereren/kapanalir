@@ -3,9 +3,14 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #f0f0f0;
 }
 
 .Dashboard .auth {
   margin-top: auto;
   margin-bottom: 20px;
+}
+
+.Dashboard > ul {
+  border: none;
 }
