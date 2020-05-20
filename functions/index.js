@@ -12,8 +12,8 @@ admin.initializeApp({
     databaseURL: "https://kapanalir-b961e.firebaseio.com"
   });
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
- response.send("Hello from Firebase!");
+exports.helloWorld = functions.https.onCall((data, context) => {
+ return 'Hello from Firebase!';
 });
 
 

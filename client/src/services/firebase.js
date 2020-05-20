@@ -16,4 +16,8 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
 
 const functions = firebase.functions();
 
-export const createGame = functions.httpsCallable('createGame');
+if(process.env.NODE_ENV !== 'production'){
+  functions.useFunctionsEmulator("http://localhost:5001");
+}
+
+export const createGame = functions.httpsCallable('gameCreate');

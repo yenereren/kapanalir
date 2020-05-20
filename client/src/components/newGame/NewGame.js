@@ -18,9 +18,9 @@ function NewGame() {
     setLoading(true);
 
     try {
-      const gameId = await createGame();
+      const res = await createGame();
 
-      setGameId(gameId);
+      setGameId(res.data.id);
     } catch (error) {
       console.log(error);
     }
@@ -29,9 +29,9 @@ function NewGame() {
   }, [loading]);
 
   return (
-    <Space className="NewGame">
+    <Space className="NewGame" direction="vertical">
       <Button onClick={onCreateGameClick}>{loading && <Spin indicator={antIcon}/>} Create Game</Button>
-      {gameId && <div>New game created: {gameId}</div>}
+      {gameId && <div>Game Id: {gameId}</div>}
     </Space>
   );
 }
