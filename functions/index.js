@@ -3,6 +3,7 @@ const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccountKey.json');
 const propertySets = require('./resources/property-sets.json')
 const gameCreate = require('./game/create');
+const gameJoin = require('./game/join');
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -18,3 +19,4 @@ exports.helloWorld = functions.https.onCall((data, context) => {
 
 
 exports.gameCreate = gameCreate;
+exports.gameJoin = gameJoin;

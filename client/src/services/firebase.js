@@ -21,3 +21,4 @@ if(process.env.NODE_ENV !== 'production'){
 }
 
 export const createGame = functions.httpsCallable('gameCreate');
+export const joinGame = functions.httpsCallable('gameJoin');

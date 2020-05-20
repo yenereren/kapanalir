@@ -3,8 +3,14 @@ const {userFunction} = require('../middlewares/userFunction');
 
 module.exports = userFunction((data, context) => {  
   return new Promise(async (resolve, reject) => {
+    const user = {
+        id: context.auth.uid,
+        position: 0,
+        picture: context.auth.token.picture
+    };
+
     const game = {
-      users: [],
+      users: [user],
       propertySets: [],
       currentUser: '',
     };
